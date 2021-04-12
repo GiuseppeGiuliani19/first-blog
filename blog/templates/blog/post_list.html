@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+
+            <div class="search-box">
+                 <form class="d-flex"  method=POST action="{% url 'search' %}"
+                 >
+                {% csrf_token %}
+                <input type="search" class="search-txt" placeholder="Cerca titolo..."
+                aria-label="Search" name="searched">
+                     <button type="submit" class="id" >search</button>
+                     </form>
+            </div>
+
+            {% for post in posts %}
+
+                        <div class="post">
+                            </div>
+                            <h2><a href="{% url 'post_detail' pk=post.pk %}" class="title">{{ post.title }}</a></h2>
+                                <p>author: {{ post.author }}</p>
+                                <p>created: {{ post.created_date }}</p>
+                                <p>last update: {{ post.published_date }}</p>
+                                <p>{{ post.text|linebreaksbr }}</p>
+                                <br/> <br/>
+                                <form class="ui form" action="{% url 'post_list' %}" method="POST">
+
+                                    <input type="hidden" name="post_id" value="{{ post.id }}">
+                                    {% csrf_token %}
+                                    {% if user not in post.liked.all %}
+                                           <button  type="submit" class="bottone">
+                                               <span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                    {% else %}
+                                            <button type="submit" class="bottone_negativo">
+                                                <span class="glyphicon glyphicon-thumbs-down"></span>
+                                            </button>
+                                    {% endif %}
+                                </form>
+                       <strong>{{ post.liked.all.count }} Likes</strong>
+            {% endfor %}
+{% endblock %}

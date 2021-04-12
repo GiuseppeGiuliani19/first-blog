@@ -1,0 +1,9 @@
+<title> l'id del proprio utente</title>
+{% extends 'blog/base.html' %}
+{% block content %}
+<h1>Pagina che visualizza l'id del proprio utente</h1>
+
+
+<h1>Benvenuto,{{ user.username }},il suo id è: {{ user.id }}</h1>
+
+{% endblock %}

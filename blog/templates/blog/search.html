@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% if searched %}
+         <h2>Stai cercando:<strong class="search"> {{ searched }} </strong> </h2>
+         <br/>
+         {% for title in search_title %}
+          <div class="post">
+                    </div>
+             <h2>{{ title.title }}</h2>author: {{title.author}}
+                        <p>published: {{ title.published_date}} </p>
+                    <p>{{ title.text|linebreaksbr }}</p>
+         {% endfor %}
+    {% else %}
+         <h1>Non hai scritto nulla nella barra di ricerca!</h1>
+    {% endif %}
+{% endblock %}
