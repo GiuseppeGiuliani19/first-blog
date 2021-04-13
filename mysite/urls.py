@@ -38,5 +38,6 @@ urlpatterns = [
     #quanti sono gli user e quanti post ciascuno ha pubblicato
     path('list_specific_user', views.list_specific_user, name="list_specific_user"),
     path('id', views.id_utente, name='id_utente'),
-    path('list_specific_user/', views.list_specific_user, name="list_specific_user")
+    path('list_specific_user/', views.list_specific_user, name="list_specific_user"),
+    path('tutorial', views.tutorial, name='tutorial'),
 ]

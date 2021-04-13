@@ -19,6 +19,9 @@ from django.conf import settings
 from .test_redis import get_recipes
 from django.urls import reverse
 
+def tutorial(request):
+    return render(request, 'blog/tutorial.html')
+
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 @cache_page(CACHE_TTL)
 def recipes_view(request):
@@ -151,14 +154,8 @@ def register(request):
     else:
         form = RegisterForm()
     return render(request, "blog/register.html", {"form": form, 'posts': posts})
-#view per vedere quante volte una stringa è contenuta nei vari posts
-def string(response):
-    posts = Post.objects.all()
-    list_post = []
-    for post in posts:
-        if "post" in post.text:
-            list_post.append(post.text)
-    return HttpResponse(f'<h1>La parola "post" è contenuta in :{len(list_post)} posts</h1>')
+
+
 #lista_bozza
 def post_draft_list(request):
     posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
@@ -194,9 +191,14 @@ def list_specific_user(request):
         else:
             return render(request, 'blog/errore_list_specificuser.html')
 
-
-
-
+#view per vedere quante volte una stringa è contenuta nei vari posts
+def string(response):
+    posts = Post.objects.all()
+    list_post = []
+    for post in posts:
+        if "post" in post.text:
+            list_post.append(post.text)
+    return HttpResponse(f'<h1>La parola "post" è contenuta in :{len(list_post)} posts</h1>')
 
 
 
