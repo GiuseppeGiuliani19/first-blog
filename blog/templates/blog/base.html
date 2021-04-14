@@ -12,7 +12,7 @@
         {% if user.is_authenticated %}
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-            <p class="top-menu">Welcome {{ user.username }} <small>(<a href="{% url 'logout' %}" id="logout">Log out</a>)</small></p>
+            <p class="top-menu">Benvenuto {{ user.username }} <small>(<a href="{% url 'logout' %}" id="logout">esci</a>)</small></p>
         {% else %}
             <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
         {% endif %}
@@ -20,9 +20,9 @@
               <a href="/" class="menu">Home</a>
               <a href="ip" class="menu">ip</a>
               <a href="id" class="menu">id utente</a>
-              <a href="writeOnchain" class="menu">writeOnchain</a>
-              <a href="string" class="menu">string</a>
-              <a href="list_specific_user" class="menu">list specific user</a>
+              <a href="writeOnchain" class="menu">trasferimento ropsten ethereum</a>
+              <a href="string" class="menu">n. stringa</a>
+              <a href="list_specific_user" class="menu">numero di post di ogni utente</a>
               <a href="tutorial" class="menu">tutorial</a>
       </div>
       <div class="content container">
