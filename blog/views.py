@@ -21,7 +21,7 @@ from django.urls import reverse
 
 def tutorial(request):
     return render(request, 'blog/tutorial.html')
-
+#funzione per il like
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 @cache_page(CACHE_TTL)
 def recipes_view(request):
@@ -46,7 +46,7 @@ def recipes_view(request):
     return render(request, 'blog/post_list.html', {
         'posts': get_recipes()
     })
-
+#funzione per la barra di ricerca
 def search(request):
     if request.method == 'POST':
         searched = request.POST['searched']
@@ -60,6 +60,7 @@ def search(request):
                       })
     else:
         return render(request, 'blog/search.html', {'posts': get_recipes()})
+#indirizzo ip dell'utente
 @cache_page(CACHE_TTL)
 def ip(request):
     search = request.POST.get('search')

@@ -37,7 +37,10 @@ urlpatterns = [
     path('string', views.string),
     #quanti sono gli user e quanti post ciascuno ha pubblicato
     path('list_specific_user', views.list_specific_user, name="list_specific_user"),
+    #id utente
     path('id', views.id_utente, name='id_utente'),
+    #url lista post di ogni utente
     path('list_specific_user/', views.list_specific_user, name="list_specific_user"),
+    #tutorial
     path('tutorial', views.tutorial, name='tutorial'),
 ]

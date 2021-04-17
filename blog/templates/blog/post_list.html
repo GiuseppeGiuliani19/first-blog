@@ -19,7 +19,7 @@
                             </div>
                             <h2><a href="{% url 'post_detail' pk=post.pk %}" class="title">{{ post.title }}</a></h2>
                                 <p>autore: {{ post.author }}</p>
-                                <p>creato: {{ post.created_date }}</p>
+                                <p>data creazione: {{ post.created_date }}</p>
                                 <p>ultimo aggiornamento: {{ post.published_date }}</p>
                                 <p>{{ post.text|linebreaksbr }}</p>
                                 <br/> <br/>

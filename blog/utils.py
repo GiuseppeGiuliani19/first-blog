@@ -4,7 +4,7 @@ import redis
 import ipapi
 from django.http import JsonResponse
 import nmap
-
+#funzione che serve ad effettuare la transazione alla ropsten di ethereum
 def sendTransaction(message):
     w3 = Web3(Web3.HTTPProvider('https://ropsten.infura.io/v3/5ce9ad5357d449778730d2fbad3d6de9'))
     address = '0x14Abd6b1F5E659c715600102C2D31f27BDfAc845'
