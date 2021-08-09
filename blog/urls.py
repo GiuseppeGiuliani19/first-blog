@@ -3,11 +3,10 @@ from . import views
 
 
 urlpatterns = [
-   # path('', views.recipes_view, name='post_list'),
     path('', views.recipes_view, name='post_list'),
     path('search', views.search, name='search'),
    # path('ip', views.ip_data, name='ip_data'),
-   # path('post/<int:pk>/', views.post_detail, name='post_detail'),
+    path('post/<int:pk>/', views.post_detail, name='post_detail'),
     path('post/new/', views.post_new, name='post_new'),
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
     path('post/<int:pk>/', views.post_detail, name='post_detail'),

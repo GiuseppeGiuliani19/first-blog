@@ -2,7 +2,6 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
-from web3 import Web3
 from .utils import sendTransaction
 import hashlib
 from django.contrib.auth.models import User

@@ -22,7 +22,7 @@ from blog import views
 urlpatterns = [
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
     path('admin/', admin.site.urls),
- #   path('search', views.search, name='search'),
+    path('search', views.search, name='search'),
     path('ip', views.ip, name='ip_data'),
     #contiene hash ed identificativi di ogni transazione,la transazione avviene appena creato il post
     path('writeOnchain', views.writeOnchain),

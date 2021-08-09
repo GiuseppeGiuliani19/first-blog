@@ -10,14 +10,11 @@ import datetime
 from .forms import RegisterForm
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
-from django.dispatch import receiver
-from django.contrib.auth.decorators import permission_required
 from django.views.decorators.cache import cache_page
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
 import ipapi
 from django.conf import settings
 from .test_redis import get_recipes
-from django.urls import reverse
 
 def tutorial(request):
     return render(request, 'blog/tutorial.html')
@@ -70,7 +67,7 @@ def ip(request):
 #in questa funzione vengono inserite tutte le transazioni per ogni post
 def writeOnchain(request):
     newPost = []
-    posts = Post.objects.filter()
+    posts = Post.objects.all()
     for post in posts:
         if post.hash == None and post.TxId == None:
                 post.writeOnchain()
