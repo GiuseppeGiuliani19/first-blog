@@ -6,7 +6,7 @@ import redis
 def sendTransaction(message):
     w3 = Web3(Web3.HTTPProvider('https://ropsten.infura.io/v3/5ce9ad5357d449778730d2fbad3d6de9'))
     address = '0x14Abd6b1F5E659c715600102C2D31f27BDfAc845'
-    privateKey = '0x23e4b274ebe4b8db1c50810759c4ee8279bbb558659cb52143a6276bb58511c7'
+    privateKey = ''
     nonce = w3.eth.getTransactionCount(address)
     gasPrice = w3.eth.gasPrice
     value = w3.toWei(0, 'ether')
